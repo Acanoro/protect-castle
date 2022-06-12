@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.5748172, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -398,6 +398,44 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 45, y: -90, z: 0}
+--- !u!1 &1576420141 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 896798323521363331, guid: b71a5b254e3589548966d2249ff88970, type: 3}
+  m_PrefabInstance: {fileID: 2097641072021619290}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1576420143
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1576420141}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59e8b00a2df4eab449cbbd89bc286e6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  towerPrefab: {fileID: 9030604867199455892, guid: ac21a8d2776768841817a5297f024d70, type: 3}
+  tower: {fileID: 0}
+--- !u!114 &1576420147
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1576420141}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d9480fda8cbed74283043568ecf1059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levels:
+  - cost: 200
+    visualization: {fileID: 9030604867199455892, guid: ac21a8d2776768841817a5297f024d70, type: 3}
+  - cost: 300
+    visualization: {fileID: 8442466432679372736, guid: 71f51296d9ae7234680ade0ef1085fdb, type: 3}
+  - cost: 400
+    visualization: {fileID: 6860118459272769028, guid: 61045006b2e9a744699d0e834c637dfc, type: 3}
 --- !u!1001 &2097641072021619290
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -405,6 +443,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2018223613791750213, guid: b71a5b254e3589548966d2249ff88970, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.33
+      objectReference: {fileID: 0}
+    - target: {fileID: 2018223613791750213, guid: b71a5b254e3589548966d2249ff88970, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.72
+      objectReference: {fileID: 0}
+    - target: {fileID: 3158323328163999923, guid: b71a5b254e3589548966d2249ff88970, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 40dd8357451c20248bccbd1b7837189b, type: 2}
+    - target: {fileID: 4188451502194139726, guid: b71a5b254e3589548966d2249ff88970, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.618
+      objectReference: {fileID: 0}
+    - target: {fileID: 4188451502194139726, guid: b71a5b254e3589548966d2249ff88970, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4518401694041865486, guid: b71a5b254e3589548966d2249ff88970, type: 3}
       propertyPath: m_Name
       value: Location
