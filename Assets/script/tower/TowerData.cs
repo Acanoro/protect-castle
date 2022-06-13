@@ -2,17 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]  // this allows us to quickly change all values ​​of the Level class, even when the game is running
+public class TowerLevel
+{
+    public int cost;
+    public GameObject visualization;
+}
+
 public class TowerData : MonoBehaviour
 {
     public List<TowerLevel> levels;
     private TowerLevel currentLevel;
-
-    [System.Serializable]  // this allows us to quickly change all values ​​of the Level class, even when the game is running
-    public class TowerLevel
-    {
-        public int cost;
-        public GameObject visualization;
-    }
 
     public TowerLevel CurrentLevel
     {
@@ -43,8 +43,33 @@ public class TowerData : MonoBehaviour
         }
     }
 
-    private void OnEnable()
+    void OnEnable()
     {
         CurrentLevel = levels[0];
+    }
+
+    public TowerLevel GetNextLevel()
+    {
+        int currentLevelIndex = levels.IndexOf(currentLevel);
+        int maxLevelIndex = levels.Count - 1;
+
+        if (currentLevelIndex < maxLevelIndex)
+        {
+            return levels[currentLevelIndex + 1];
+        }
+        else
+        {
+            return null;
+        }
+    }
+
+    public void IncreaseLevel()
+    {
+        int currentLevelIndex = levels.IndexOf(currentLevel);
+        
+        if (currentLevelIndex < levels.Count - 1)
+        {
+            CurrentLevel = levels[currentLevelIndex + 1];
+        }
     }
 }
