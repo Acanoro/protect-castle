@@ -18,7 +18,16 @@ public class PlaceTower : MonoBehaviour
     // positions the tower on mouse click or screen touch
     private void OnMouseUp()
     {
-        if (CanPlaceTower())
+        if (tower == null)
+        {
+            transform.Find("tower selection").gameObject.SetActive(true);
+        }
+        else
+        {
+            transform.Find("tower work").gameObject.SetActive(true);
+        }
+
+/*        if (CanPlaceTower())
         {
             tower = Instantiate(towerPrefab, transform.position, Quaternion.identity);
 
@@ -29,7 +38,7 @@ public class PlaceTower : MonoBehaviour
             tower.GetComponent<TowerData>().IncreaseLevel();
 
             gameManagere.Gold -= tower.GetComponent<TowerData>().CurrentLevel.cost;
-        }
+        }*/
     }
 
     private bool CanUpgradeTower()
@@ -40,7 +49,6 @@ public class PlaceTower : MonoBehaviour
             TowerLevel nextLevel = towerData.GetNextLevel();
             if (nextLevel != null)
             {
-                Debug.Log("1");
                 return gameManagere.Gold >= nextLevel.cost;
             }
         }
@@ -51,5 +59,20 @@ public class PlaceTower : MonoBehaviour
     void Start()
     {
         gameManagere = GameObject.Find("GameManager").GetComponent<GameManagerBehavior>();
+    }
+
+    void Update()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            if (transform.Find("tower selection").gameObject.activeSelf)
+            {
+                transform.Find("tower selection").gameObject.SetActive(false);
+            }
+            if (transform.Find("tower work").gameObject.activeSelf)
+            {
+                transform.Find("tower work").gameObject.SetActive(false);
+            }
+        }
     }
 }

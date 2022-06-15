@@ -59,6 +59,8 @@
     <Compile Include="Assets\Script\tower\PlaceTower.cs" />
     <Compile Include="Assets\Script\tower\TowerData.cs" />
     <Compile Include="Assets\Script\GameManagerBehavior.cs" />
+    <Compile Include="Assets\Script\tower\TowerSelection.cs" />
+    <Compile Include="Assets\Script\tower\ActionTower.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
