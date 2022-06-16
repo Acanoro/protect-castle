@@ -57,10 +57,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Script\tower\PlaceTower.cs" />
+    <Compile Include="Assets\Script\tower\TowerUpgrade.cs" />
     <Compile Include="Assets\Script\tower\TowerData.cs" />
     <Compile Include="Assets\Script\GameManagerBehavior.cs" />
-    <Compile Include="Assets\Script\tower\TowerSelection.cs" />
-    <Compile Include="Assets\Script\tower\ActionTower.cs" />
+    <Compile Include="Assets\Script\tower\BuildingTower.cs" />
+    <Compile Include="Assets\Script\tower\TowerRemoval.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

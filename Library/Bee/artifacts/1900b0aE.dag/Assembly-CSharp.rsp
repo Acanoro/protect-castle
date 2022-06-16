@@ -352,10 +352,11 @@
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEditor.UI.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEngine.UI.ref.dll"
 "Assets/Script/GameManagerBehavior.cs"
-"Assets/Script/tower/ActionTower.cs"
+"Assets/Script/tower/BuildingTower.cs"
 "Assets/Script/tower/PlaceTower.cs"
 "Assets/Script/tower/TowerData.cs"
-"Assets/Script/tower/TowerSelection.cs"
+"Assets/Script/tower/TowerRemoval.cs"
+"Assets/Script/tower/TowerUpgrade.cs"
 -langversion:9.0
 
 /deterministic
