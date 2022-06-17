@@ -12,19 +12,17 @@ public class TowerUpgrade : MonoBehaviour
     {
         if (CanUpgradeTower())
         {
-            Object.GetTower().GetComponent<TowerData>().IncreaseLevel();
-
-            gameManagere.Gold -= Object.GetTower().GetComponent<TowerData>().CurrentLevel.cost;
-
+            Object.Tower.GetComponent<TowerData>().IncreaseLevel();
+            gameManagere.Gold -= Object.Tower.GetComponent<TowerData>().CurrentLevel.cost;
             Object.transform.Find("tower work").gameObject.SetActive(false);
         }
     }
 
     private bool CanUpgradeTower()
     {
-        if (Object.GetTower() != null)
+        if (Object.Tower != null)
         {
-            TowerData towerData = Object.GetTower().GetComponent<TowerData>();
+            TowerData towerData = Object.Tower.GetComponent<TowerData>();
             TowerLevel nextLevel = towerData.GetNextLevel();
             if (nextLevel != null)
             {

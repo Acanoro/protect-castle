@@ -5,26 +5,41 @@ using UnityEngine;
 public class PlaceTower : MonoBehaviour
 {
     private GameObject tower;  // object to be handled during the game
+    private GameObject towerExample;
 
-    public GameObject GetTower()
+    public GameObject TowerExample
     {
-        return tower;
+        get
+        {
+            return towerExample;
+        }
+        set
+        {
+            towerExample = value;
+        }
     }
 
-    public void SetTower(GameObject Tower)
+    public GameObject Tower
     {
-        tower = Tower;
+        get
+        {
+            return tower;
+        }
+        set
+        {
+            tower = value;
+        }
     }
 
     private void OnMouseUp()
     {
         if (tower == null)
         {
-            transform.Find("tower selection").gameObject.SetActive(true);
+            transform.Find("tower selection").gameObject.SetActive(!transform.Find("tower selection").gameObject.activeSelf);
         }
         else
         {
-            transform.Find("tower work").gameObject.SetActive(true);
+            transform.Find("tower work").gameObject.SetActive(!transform.Find("tower work").gameObject.activeSelf);
         }
     }
 }

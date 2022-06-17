@@ -9,8 +9,8 @@ public class TowerRemoval : MonoBehaviour
 
     void OnMouseUp()
     {
-        Destroy(Object.GetTower());
-        gameManagere.Gold += Object.GetTower().GetComponent<TowerData>().CurrentLevel.refundAmount;
+        Destroy(Object.Tower);
+        gameManagere.Gold += Object.Tower.GetComponent<TowerData>().CurrentLevel.refundAmount;
         Object.transform.Find("tower work").gameObject.SetActive(false);
     }
 
