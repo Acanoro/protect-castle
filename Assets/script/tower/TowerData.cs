@@ -6,6 +6,7 @@ using UnityEngine;
 public class TowerLevel
 {
     public int cost;
+    public int refundAmount;
     public GameObject visualization;
 }
 

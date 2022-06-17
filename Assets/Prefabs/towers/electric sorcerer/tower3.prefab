@@ -339,9 +339,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levels:
-  - cost: 200
+  - cost: 225
+    refundAmount: 165
     visualization: {fileID: 4891968582594914977}
-  - cost: 300
+  - cost: 250
+    refundAmount: 285
     visualization: {fileID: 2129302545332086320}
-  - cost: 400
+  - cost: 300
+    refundAmount: 465
     visualization: {fileID: 4731074376945225687}

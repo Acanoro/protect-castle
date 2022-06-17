@@ -48,11 +48,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levels:
-  - cost: 200
+  - cost: 100
+    refundAmount: 60
     visualization: {fileID: 7151925495164007540}
-  - cost: 300
+  - cost: 150
+    refundAmount: 150
     visualization: {fileID: 1187770777153381933}
-  - cost: 400
+  - cost: 200
+    refundAmount: 270
     visualization: {fileID: 3571043008947243044}
 --- !u!1001 &143298048326349943
 PrefabInstance:

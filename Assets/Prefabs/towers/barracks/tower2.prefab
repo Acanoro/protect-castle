@@ -48,11 +48,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levels:
-  - cost: 200
+  - cost: 50
+    refundAmount: 30
     visualization: {fileID: 2703032122382658009}
-  - cost: 300
+  - cost: 75
+    refundAmount: 75
     visualization: {fileID: 6808650693690089612}
-  - cost: 400
+  - cost: 100
+    refundAmount: 165
     visualization: {fileID: 5716533058752994160}
 --- !u!1 &2703032122382658009
 GameObject:
