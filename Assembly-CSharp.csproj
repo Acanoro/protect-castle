@@ -62,6 +62,7 @@
     <Compile Include="Assets\Script\tower\TowerData.cs" />
     <Compile Include="Assets\Script\GameManagerBehavior.cs" />
     <Compile Include="Assets\Script\tower\BuildingTower.cs" />
+    <Compile Include="Assets\Script\PlayerRay.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class TowerRemoval : MonoBehaviour
 {
-    public PlaceTower Object;
+    public PlaceTower placeTower;
     private GameManagerBehavior gameManagere;  // to access the GameManager Behavior component of the scene's GameManager object
 
-    void OnMouseUp()
+    public void Click()
     {
-        Destroy(Object.Tower);
-        gameManagere.Gold += Object.Tower.GetComponent<TowerData>().CurrentLevel.refundAmount;
-        Object.transform.Find("tower work").gameObject.SetActive(false);
+        Destroy(placeTower.Tower);
+        gameManagere.Gold += placeTower.Tower.GetComponent<TowerData>().CurrentLevel.refundAmount;
+        placeTower.transform.Find("tower work").gameObject.SetActive(false);
     }
 
     // Start is called before the first frame update

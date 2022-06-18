@@ -5,24 +5,35 @@ using UnityEngine;
 public class TowerUpgrade : MonoBehaviour
 {
     private GameManagerBehavior gameManagere;  // to access the GameManager Behavior component of the scene's GameManager object
-    public PlaceTower Object;
+    public PlaceTower placeTower;
+
+    private bool selectedImprovement = false;
 
     // positions the tower on mouse click or screen touch
-    void OnMouseUp()
+    public void Click()
     {
         if (CanUpgradeTower())
         {
-            Object.Tower.GetComponent<TowerData>().IncreaseLevel();
-            gameManagere.Gold -= Object.Tower.GetComponent<TowerData>().CurrentLevel.cost;
-            Object.transform.Find("tower work").gameObject.SetActive(false);
+            if (selectedImprovement)
+            {
+                placeTower.Tower.GetComponent<TowerData>().IncreaseLevel();
+                gameManagere.Gold -= placeTower.Tower.GetComponent<TowerData>().CurrentLevel.cost;
+                placeTower.transform.Find("tower work").gameObject.SetActive(false);
+                selectedImprovement = false;
+            }
+        }
+        if (!selectedImprovement)
+        {
+            Debug.Log("1");
+            selectedImprovement = true;
         }
     }
 
     private bool CanUpgradeTower()
     {
-        if (Object.Tower != null)
+        if (placeTower.Tower != null)
         {
-            TowerData towerData = Object.Tower.GetComponent<TowerData>();
+            TowerData towerData = placeTower.Tower.GetComponent<TowerData>();
             TowerLevel nextLevel = towerData.GetNextLevel();
             if (nextLevel != null)
             {

@@ -31,15 +31,15 @@ public class PlaceTower : MonoBehaviour
         }
     }
 
-    private void OnMouseUp()
+/*    private void OnMouseUp()
     {
         if (tower == null)
         {
-            transform.Find("tower selection").gameObject.SetActive(!transform.Find("tower selection").gameObject.activeSelf);
+            transform.Find("tower selection").gameObject.SetActive(true);
         }
         else
         {
-            transform.Find("tower work").gameObject.SetActive(!transform.Find("tower work").gameObject.activeSelf);
+            transform.Find("tower work").gameObject.SetActive(true);
         }
-    }
+    }*/
 }
