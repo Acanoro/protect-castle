@@ -4,8 +4,12 @@ using UnityEngine;
 
 public class PlayerRay : MonoBehaviour
 {
-    public PlaceTower placeTower;
-    public BuildingTower buildingTower;
+    private PlaceTower placeTower;
+    private BuildingTower buildingTower;
+    private TowerUpgrade towerUpgrade;
+
+    public GameObject descriptionTowerBuild;
+    public GameObject descriptionTowerUpgrade;
 
     private void showTowerSelection()
     {
@@ -31,6 +35,34 @@ public class PlayerRay : MonoBehaviour
         }
     }
 
+    public void ExitBuild()
+    {
+        buildingTower = null;
+        showTowerSelection();
+    }
+
+    public void ExitUpgrade()
+    {
+        towerUpgrade = null;
+        showTowerSelection();
+    }
+
+    public void Build()
+    {
+        hideTowerSelection();
+        buildingTower.Click();
+        buildingTower = null;
+        placeTower = null;
+    }
+
+    public void Ubgrade()
+    {
+        hideTowerSelection();
+        towerUpgrade.Click();
+        buildingTower = null;
+        placeTower = null;
+    }
+
     void Update()
     {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -47,39 +79,42 @@ public class PlayerRay : MonoBehaviour
                 }
                 else if (temporaryPlaceTower)
                 {
-                    hideTowerSelection();
-
-                    if (placeTower.TowerExample)
+                    if ((placeTower.Tower == null && descriptionTowerBuild.activeSelf == false) || (placeTower.Tower && descriptionTowerUpgrade.activeSelf == false))
                     {
-                        Destroy(placeTower.TowerExample);
-                        buildingTower.SelectedTower = false;
-                        buildingTower = null;
+                        hideTowerSelection();
+                        placeTower = temporaryPlaceTower;
+                        showTowerSelection();
                     }
-
-                    placeTower = temporaryPlaceTower;
-                    showTowerSelection();
                 }
 
                 BuildingTower temporarybuildingTower = hit.collider.gameObject.GetComponent<BuildingTower>();
                 if (temporarybuildingTower)
                 {
                     buildingTower = temporarybuildingTower;
-                    if (buildingTower.SelectedTower)
+                    if (placeTower.Tower)
                     {
-                        buildingTower.Click();
-                        placeTower = null;
-                        buildingTower = null;
+                        descriptionTowerUpgrade.SetActive(true);
                     }
                     else
                     {
-                        buildingTower.Click();
+                        descriptionTowerBuild.SetActive(true);
                     }
+                    hideTowerSelection();
                 }
 
-                TowerUpgrade towerUpgrade = hit.collider.gameObject.GetComponent<TowerUpgrade>();
-                if (towerUpgrade)
+                TowerUpgrade temporaryTowerUpgrade = hit.collider.gameObject.GetComponent<TowerUpgrade>();
+                if (temporaryTowerUpgrade)
                 {
-                    towerUpgrade.Click();
+                    towerUpgrade = temporaryTowerUpgrade;
+                    if (placeTower.Tower)
+                    {
+                        descriptionTowerUpgrade.SetActive(true);
+                    }
+                    else
+                    {
+                        descriptionTowerBuild.SetActive(true);
+                    }
+                    hideTowerSelection();
                 }
 
                 TowerRemoval towerRemoval = hit.collider.gameObject.GetComponent<TowerRemoval>();
@@ -91,20 +126,17 @@ public class PlayerRay : MonoBehaviour
         }
         else
         {
-            if (Input.GetMouseButtonDown(0))
+            if (Input.GetMouseButtonDown(0) && placeTower)
             {
-                if (placeTower)
+                if ((placeTower.Tower == null && descriptionTowerBuild.activeSelf == false) || (placeTower.Tower && descriptionTowerUpgrade.activeSelf == false))
                 {
-                    hideTowerSelection();
+                    if (placeTower)
+                    {
+                        hideTowerSelection();
+                    }
+                    placeTower = null;
+                    buildingTower = null;
                 }
-                if (buildingTower)
-                {
-                    Destroy(placeTower.TowerExample);
-                    buildingTower.SelectedTower = false;
-                }
-
-                placeTower = null;
-                buildingTower = null;
             }
         }
     }
