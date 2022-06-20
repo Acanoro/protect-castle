@@ -11,6 +11,9 @@ public class PlayerRay : MonoBehaviour
     public GameObject descriptionTowerBuild;
     public GameObject descriptionTowerUpgrade;
 
+    public GameObject towerName;
+    public GameObject towerDescription;
+
     private void showTowerSelection()
     {
         if (placeTower.Tower == null)
@@ -45,6 +48,11 @@ public class PlayerRay : MonoBehaviour
     {
         towerUpgrade = null;
         showTowerSelection();
+        if (placeTower.Tower)
+        {
+            towerName.SetActive(false);
+            towerDescription.SetActive(false);
+        }
     }
 
     public void Build()
@@ -59,6 +67,13 @@ public class PlayerRay : MonoBehaviour
     {
         hideTowerSelection();
         towerUpgrade.Click();
+
+        if (placeTower.Tower)
+        {
+            towerName.SetActive(false);
+            towerDescription.SetActive(false);
+        }
+
         buildingTower = null;
         placeTower = null;
     }
@@ -75,6 +90,12 @@ public class PlayerRay : MonoBehaviour
                 if (placeTower == null && temporaryPlaceTower)
                 {
                     placeTower = temporaryPlaceTower;
+                    if (placeTower.Tower)
+                    {
+                        placeTower.Filling();
+                        towerName.SetActive(true);
+                        towerDescription.SetActive(true);
+                    }
                     showTowerSelection();
                 }
                 else if (temporaryPlaceTower)
@@ -84,6 +105,13 @@ public class PlayerRay : MonoBehaviour
                         hideTowerSelection();
                         placeTower = temporaryPlaceTower;
                         showTowerSelection();
+                    }
+                    placeTower = temporaryPlaceTower;
+                    if (placeTower.Tower)
+                    {
+                        placeTower.Filling();
+                        towerName.SetActive(true);
+                        towerDescription.SetActive(true);
                     }
                 }
 
@@ -133,6 +161,11 @@ public class PlayerRay : MonoBehaviour
                     if (placeTower)
                     {
                         hideTowerSelection();
+                    }
+                    if (placeTower.Tower)
+                    {
+                        towerName.SetActive(false);
+                        towerDescription.SetActive(false);
                     }
                     placeTower = null;
                     buildingTower = null;

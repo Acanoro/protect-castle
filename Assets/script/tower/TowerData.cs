@@ -5,6 +5,9 @@ using UnityEngine;
 [System.Serializable]  // this allows us to quickly change all values ​​of the Level class, even when the game is running
 public class TowerLevel
 {
+    public string strength;
+    public string rateOfFire;
+    public string attackRadius;
     public int cost;
     public int refundAmount;
     public GameObject visualization;
@@ -13,6 +16,7 @@ public class TowerLevel
 public class TowerData : MonoBehaviour
 {
     public List<TowerLevel> levels;
+    public string Name;
     private TowerLevel currentLevel;
 
     public TowerLevel CurrentLevel

@@ -145,15 +145,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levels:
-  - cost: 150
+  - strength: 9-17
+    rateOfFire: "\u041C\u0435\u0434\u043B\u0435\u043D\u043D\u043E"
+    attackRadius: "\u041D\u0435\u0431\u043E\u043B\u044C\u0448\u043E\u0439"
+    cost: 150
     refundAmount: 90
     visualization: {fileID: 5227820807417900993}
-  - cost: 300
+  - strength: 23-43
+    rateOfFire: "\u041C\u0435\u0434\u043B\u0435\u043D\u043D\u043E"
+    attackRadius: "\u0421\u0440\u0435\u0434\u043D\u0438\u0439"
+    cost: 300
     refundAmount: 270
     visualization: {fileID: 6749146292276151124}
-  - cost: 450
+  - strength: 40-74
+    rateOfFire: "\u041C\u0435\u0434\u043B\u0435\u043D\u043D\u043E"
+    attackRadius: "\u0411\u043E\u043B\u044C\u0448\u043E\u0439"
+    cost: 450
     refundAmount: 540
     visualization: {fileID: 2296831457515280696}
+  Name: "\u041E\u0433\u043D\u0435\u043D\u0430\u044F \u0431\u0430\u0448\u043D\u044F"
 --- !u!1 &5227820807417900993
 GameObject:
   m_ObjectHideFlags: 0
