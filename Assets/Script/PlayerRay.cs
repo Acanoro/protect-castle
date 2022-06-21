@@ -113,6 +113,11 @@ public class PlayerRay : MonoBehaviour
                         towerName.SetActive(true);
                         towerDescription.SetActive(true);
                     }
+                    else
+                    {
+                        towerName.SetActive(false);
+                        towerDescription.SetActive(false);
+                    }
                 }
 
                 BuildingTower temporarybuildingTower = hit.collider.gameObject.GetComponent<BuildingTower>();

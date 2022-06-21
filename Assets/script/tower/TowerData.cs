@@ -15,9 +15,10 @@ public class TowerLevel
 
 public class TowerData : MonoBehaviour
 {
+    private TowerLevel currentLevel;
     public List<TowerLevel> levels;
     public string Name;
-    private TowerLevel currentLevel;
+    public Sprite icon;
 
     public TowerLevel CurrentLevel
     {

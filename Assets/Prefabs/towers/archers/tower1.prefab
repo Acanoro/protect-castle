@@ -67,6 +67,7 @@ MonoBehaviour:
     refundAmount: 150
     visualization: {fileID: 1466542253522636539}
   Name: "\u0411\u0430\u0448\u043D\u044F \u043B\u0443\u0447\u043D\u0438\u043A\u043E\u0432"
+  icon: {fileID: 21300000, guid: 7b928c62e5738334b8f020e0fbd79c12, type: 3}
 --- !u!1001 &5890568653256096519
 PrefabInstance:
   m_ObjectHideFlags: 0

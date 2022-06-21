@@ -12,6 +12,8 @@ public class PlaceTower : MonoBehaviour
     public Text rateOfFireLabel;
     public Text attackRadiusLabel;
 
+    public Image iconTower;
+
     public GameObject Tower
     {
         get
@@ -26,6 +28,7 @@ public class PlaceTower : MonoBehaviour
 
     public void Filling()
     {
+        iconTower.GetComponent<Image>().sprite = tower.GetComponent<TowerData>().icon;
         nameLabel.GetComponent<Text>().text = tower.GetComponent<TowerData>().Name;
         strengthLabel.GetComponent<Text>().text = tower.GetComponent<TowerData>().CurrentLevel.strength;
         rateOfFireLabel.GetComponent<Text>().text = tower.GetComponent<TowerData>().CurrentLevel.rateOfFire;
