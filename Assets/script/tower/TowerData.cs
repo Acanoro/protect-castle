@@ -10,6 +10,8 @@ public class TowerLevel
     public string attackRadius;
     public int cost;
     public int refundAmount;
+    public GameObject bullet;
+    public float fireRate;
     public GameObject visualization;
 }
 

@@ -4,8 +4,7 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - tower selection
-  - TowerSelection
+  - Tower
   layers:
   - Default
   - TransparentFX
