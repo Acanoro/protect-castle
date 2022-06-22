@@ -304,6 +304,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5470313288287996292}
   - component: {fileID: 8005406376998916506}
+  - component: {fileID: -3232110536977153389}
   m_Layer: 0
   m_Name: tower3
   m_TagString: Untagged
@@ -347,19 +348,38 @@ MonoBehaviour:
     attackRadius: "\u041D\u0435\u0431\u043E\u043B\u044C\u0448\u043E\u0439"
     cost: 225
     refundAmount: 165
+    bullet: {fileID: 0}
+    fireRate: 0
     visualization: {fileID: 4891968582594914977}
   - strength: 23-43
     rateOfFire: "\u041C\u0435\u0434\u043B\u0435\u043D\u043E"
     attackRadius: "\u0421\u0440\u0435\u0434\u043D\u0438\u0439"
     cost: 250
     refundAmount: 285
+    bullet: {fileID: 0}
+    fireRate: 0
     visualization: {fileID: 2129302545332086320}
   - strength: 40-74
     rateOfFire: "\u041C\u0435\u0434\u043B\u0435\u043D\u043D\u043E"
     attackRadius: "\u0411\u043E\u043B\u044C\u0448\u043E\u0439"
     cost: 300
     refundAmount: 465
+    bullet: {fileID: 0}
+    fireRate: 0
     visualization: {fileID: 4731074376945225687}
   Name: "\u042D\u043B\u0435\u043A\u0442\u0440\u0438\u0447\u0435\u0441\u043A\u0430\u044F
     \u0431\u0430\u0448\u043D\u044F"
   icon: {fileID: 21300000, guid: a88d4525255fe654db339083047b64ff, type: 3}
+--- !u!114 &-3232110536977153389
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5558023101863725401}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c35d22f92772bd448e286b59cb03204, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemiesInRange: []

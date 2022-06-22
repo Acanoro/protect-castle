@@ -16,6 +16,9 @@ public class BulletBehavior : MonoBehaviour
     private float distance;
     private float startTime;
 
+    public EnemyChar enChar;
+
+
     private GameManagerBehavior gameManager; // rewards the player when they kill an enemy
 
     void Start()
@@ -33,7 +36,7 @@ public class BulletBehavior : MonoBehaviour
         float timeInterval = Time.time - startTime;
         gameObject.transform.position = Vector3.Lerp(startPosition, targetPosition, timeInterval * speed / distance);
 
-/*        // checking if target still exists
+        // checking if target still exists
         if (gameObject.transform.position.Equals(targetPosition))
         {
             if (target != null)
@@ -47,10 +50,10 @@ public class BulletBehavior : MonoBehaviour
                 {
                     Destroy(target);
 
-                    gameManager.Gold += 50;
+                    gameManager.Gold += enChar.Gold;
                 }
             }
             Destroy(gameObject);
-        }*/
+        }
     }
 }

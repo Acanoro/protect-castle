@@ -4,12 +4,18 @@ using UnityEngine;
 
 public class HealthBar : MonoBehaviour
 {
-    public float maxHealth = 100; // maximum enemy health
-    public float currentHealth = 100; // remaining health
+    
     private float originalScale; // initial health bar size
+
+    public EnemyChar enChar;
+
+    public float maxHealth; // maximum enemy health
+    public float currentHealth; // remaining health
 
     void Start()
     {
+        maxHealth = enChar.Health;
+        currentHealth = enChar.Health;
         originalScale = gameObject.transform.localScale.y;
     }
 

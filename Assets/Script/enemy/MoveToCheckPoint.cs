@@ -26,13 +26,12 @@ public class MoveToCheckPoint : MonoBehaviour
     }
 
     // The code calculates the length of the path not yet traveled by the enemy
+    // I've replaced Waypoints[curWaypointIndex + 1] on Waypoints[curWaypointIndex]
     public float DistanceToGoal()
     {
         float distance = 0;
-        distance += Vector2.Distance(
-            gameObject.transform.position,
-            Waypoints[curWaypointIndex + 1].transform.position);
-        for (int i = curWaypointIndex + 1; i < Waypoints.Length - 1; i++)
+        distance += Vector2.Distance(gameObject.transform.position, Waypoints[curWaypointIndex].transform.position);
+        for (int i = curWaypointIndex; i < Waypoints.Length - 1; i++)
         {
             Vector3 startPosition = Waypoints[i].transform.position;
             Vector3 endPosition = Waypoints[i + 1].transform.position;

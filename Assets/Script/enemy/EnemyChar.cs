@@ -6,7 +6,7 @@ public class EnemyChar : MonoBehaviour
 {
 
     public int Gold;
-    public int Health;
+    public float Health;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,10 +16,6 @@ public class EnemyChar : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Health -= 10;
-        if (Health <= 0)
-        {
-            Gold += 15;
-        }
+       
     }
 }

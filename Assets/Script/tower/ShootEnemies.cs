@@ -12,7 +12,8 @@ public class ShootEnemies : MonoBehaviour
     {
         enemiesInRange = new List<GameObject>(); // At the very beginning, there are no enemies in range, so we create an empty list
         lastShotTime = Time.time;
-        towerData = gameObject.GetComponentInChildren<TowerData>();
+        /*towerData = gameObject.GetComponentInChildren<TowerData>();*/
+        Debug.Log(towerData);
     }
 
     // In OnEnemyDestroy we remove the enemy from enemiesInRange
@@ -44,7 +45,7 @@ public class ShootEnemies : MonoBehaviour
         }
     }
 
-    void Shoot(Collider2D target)
+    void Shoot(Collider target)
     {
         GameObject bulletPrefab = towerData.CurrentLevel.bullet;
         // We get the initial and target bullet positions
@@ -79,11 +80,12 @@ public class ShootEnemies : MonoBehaviour
         // Call Shoot if the elapsed time is greater than the monster's shooting rate and set lastShotTime to the current time.
         if (target != null)
         {
-            if (Time.time - lastShotTime > towerData.CurrentLevel.fireRate)
+           /* Debug.Log(towerData);*/
+           /* if (Time.time - lastShotTime > towerData.CurrentLevel.fireRate)
             {
-                Shoot(target.GetComponent<Collider2D>());
+                Shoot(target.GetComponent<Collider>());
                 lastShotTime = Time.time;
-            }
+            }*/
         }
     }
 }
