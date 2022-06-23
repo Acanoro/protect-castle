@@ -16,9 +16,6 @@ public class BulletBehavior : MonoBehaviour
     private float distance;
     private float startTime;
 
-    public EnemyChar enChar;
-
-
     private GameManagerBehavior gameManager; // rewards the player when they kill an enemy
 
     void Start()
@@ -50,7 +47,7 @@ public class BulletBehavior : MonoBehaviour
                 {
                     Destroy(target);
 
-                    gameManager.Gold += enChar.Gold;
+                    gameManager.Gold += healthBar.gold;
                 }
             }
             Destroy(gameObject);

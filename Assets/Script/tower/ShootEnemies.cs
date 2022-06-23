@@ -6,14 +6,12 @@ public class ShootEnemies : MonoBehaviour
 {
     public List<GameObject> enemiesInRange; // tracking all enemies in range
     private float lastShotTime;
-    private TowerData towerData;
+    public TowerData towerData;
 
     void Start()
     {
         enemiesInRange = new List<GameObject>(); // At the very beginning, there are no enemies in range, so we create an empty list
         lastShotTime = Time.time;
-        /*towerData = gameObject.GetComponentInChildren<TowerData>();*/
-        Debug.Log(towerData);
     }
 
     // In OnEnemyDestroy we remove the enemy from enemiesInRange
@@ -51,8 +49,8 @@ public class ShootEnemies : MonoBehaviour
         // We get the initial and target bullet positions
         Vector3 startPosition = gameObject.transform.position;
         Vector3 targetPosition = target.transform.position;
-        startPosition.z = bulletPrefab.transform.position.z;
-        targetPosition.z = bulletPrefab.transform.position.z;
+        startPosition.y = bulletPrefab.transform.position.y;
+        targetPosition.y = bulletPrefab.transform.position.y;
 
         // A copy of the new projectile 
         GameObject newBullet = (GameObject)Instantiate(bulletPrefab);
@@ -80,12 +78,11 @@ public class ShootEnemies : MonoBehaviour
         // Call Shoot if the elapsed time is greater than the monster's shooting rate and set lastShotTime to the current time.
         if (target != null)
         {
-           /* Debug.Log(towerData);*/
-           /* if (Time.time - lastShotTime > towerData.CurrentLevel.fireRate)
+            if (Time.time - lastShotTime > towerData.CurrentLevel.fireRate)
             {
                 Shoot(target.GetComponent<Collider>());
                 lastShotTime = Time.time;
-            }*/
+            }
         }
     }
 }

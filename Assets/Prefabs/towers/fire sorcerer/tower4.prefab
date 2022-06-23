@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8373851234501058355}
   - component: {fileID: 3942317287104261898}
   - component: {fileID: 3424424325651823570}
+  - component: {fileID: 4345479838610097507}
   m_Layer: 2
   m_Name: level3
   m_TagString: Untagged
@@ -98,6 +99,20 @@ CapsuleCollider:
   m_Height: 7
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &4345479838610097507
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2296831457515280696}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c35d22f92772bd448e286b59cb03204, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemiesInRange: []
+  towerData: {fileID: 6110556295584967758}
 --- !u!1 &3543378886501700889
 GameObject:
   m_ObjectHideFlags: 0
@@ -108,7 +123,6 @@ GameObject:
   m_Component:
   - component: {fileID: 172548271038188791}
   - component: {fileID: 6110556295584967758}
-  - component: {fileID: -4404747400537475070}
   m_Layer: 0
   m_Name: tower4
   m_TagString: Untagged
@@ -152,40 +166,27 @@ MonoBehaviour:
     attackRadius: "\u041D\u0435\u0431\u043E\u043B\u044C\u0448\u043E\u0439"
     cost: 150
     refundAmount: 90
-    bullet: {fileID: 0}
-    fireRate: 0
+    bullet: {fileID: 8597374561368270907, guid: a96b09973a084eb499b7f2e6135543e1, type: 3}
+    fireRate: 1
     visualization: {fileID: 5227820807417900993}
   - strength: 23-43
     rateOfFire: "\u041C\u0435\u0434\u043B\u0435\u043D\u043D\u043E"
     attackRadius: "\u0421\u0440\u0435\u0434\u043D\u0438\u0439"
     cost: 300
     refundAmount: 270
-    bullet: {fileID: 0}
-    fireRate: 0
+    bullet: {fileID: 7035541190334439306, guid: 6a2a61e92e2fd7b408046a2fcba47935, type: 3}
+    fireRate: 1
     visualization: {fileID: 6749146292276151124}
   - strength: 40-74
     rateOfFire: "\u041C\u0435\u0434\u043B\u0435\u043D\u043D\u043E"
     attackRadius: "\u0411\u043E\u043B\u044C\u0448\u043E\u0439"
     cost: 450
     refundAmount: 540
-    bullet: {fileID: 0}
-    fireRate: 0
+    bullet: {fileID: 3683170690433160760, guid: 958aa437376d3564dbfb8a76f37e2b5b, type: 3}
+    fireRate: 1
     visualization: {fileID: 2296831457515280696}
   Name: "\u041E\u0433\u043D\u0435\u043D\u0430\u044F \u0431\u0430\u0448\u043D\u044F"
   icon: {fileID: 21300000, guid: f6f348a58498ca14bb4ced7615d657e9, type: 3}
---- !u!114 &-4404747400537475070
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3543378886501700889}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0c35d22f92772bd448e286b59cb03204, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemiesInRange: []
 --- !u!1 &5227820807417900993
 GameObject:
   m_ObjectHideFlags: 0
@@ -198,6 +199,7 @@ GameObject:
   - component: {fileID: 9050898703686143039}
   - component: {fileID: 7497587129322952533}
   - component: {fileID: 1710222684889485831}
+  - component: {fileID: 3514975111411691131}
   m_Layer: 2
   m_Name: level1
   m_TagString: Untagged
@@ -284,6 +286,20 @@ CapsuleCollider:
   m_Height: 7
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &3514975111411691131
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5227820807417900993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c35d22f92772bd448e286b59cb03204, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemiesInRange: []
+  towerData: {fileID: 6110556295584967758}
 --- !u!1 &6749146292276151124
 GameObject:
   m_ObjectHideFlags: 0
@@ -296,6 +312,7 @@ GameObject:
   - component: {fileID: 7947600821000383272}
   - component: {fileID: 201631205053445205}
   - component: {fileID: 6976817514644467992}
+  - component: {fileID: 623474670163871900}
   m_Layer: 2
   m_Name: level2
   m_TagString: Untagged
@@ -382,3 +399,17 @@ CapsuleCollider:
   m_Height: 7
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &623474670163871900
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6749146292276151124}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c35d22f92772bd448e286b59cb03204, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemiesInRange: []
+  towerData: {fileID: 6110556295584967758}

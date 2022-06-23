@@ -7,15 +7,14 @@ public class HealthBar : MonoBehaviour
     
     private float originalScale; // initial health bar size
 
-    public EnemyChar enChar;
-
     public float maxHealth; // maximum enemy health
     public float currentHealth; // remaining health
+    public int gold;
 
     void Start()
     {
-        maxHealth = enChar.Health;
-        currentHealth = enChar.Health;
+        maxHealth = 100;
+        currentHealth = 100;
         originalScale = gameObject.transform.localScale.y;
     }
 
