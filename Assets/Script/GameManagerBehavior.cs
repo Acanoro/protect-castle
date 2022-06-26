@@ -46,7 +46,7 @@ public class GameManagerBehavior : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Gold = 500;
+        Gold = 600;
         wave = 0;
         health = 20;
     }

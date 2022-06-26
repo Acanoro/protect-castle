@@ -48,27 +48,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levels:
-  - strength: 213
-    rateOfFire: qew
-    attackRadius: qwe
-    cost: 50
-    refundAmount: 50
-    bullet: {fileID: 5788160600153641168, guid: 963562161c947e64a953e45819b91af6, type: 3}
-    fireRate: 1
+  - strength: 2
+    rateOfFire: "\u041E\u0447\u0435\u043D\u044C \u043C\u0435\u0434\u043B\u0435\u043D\u043D\u043E"
+    attackRadius: "\u0411\u043E\u043B\u044C\u0448\u043E\u0439"
+    cost: 200
+    refundAmount: 100
+    bullet: {fileID: 8597374561368270907, guid: a96b09973a084eb499b7f2e6135543e1, type: 3}
+    fireRate: 2.5
     visualization: {fileID: 9108219760622721408}
-  - strength: 123
-    rateOfFire: qwe
-    attackRadius: qwe
-    cost: 50
-    refundAmount: 50
-    bullet: {fileID: 5788160600153641168, guid: 963562161c947e64a953e45819b91af6, type: 3}
-    fireRate: 1
+  - strength: 5
+    rateOfFire: "\u041C\u0435\u0434\u043B\u0435\u043D\u043D\u043E"
+    attackRadius: "\u041E\u0447\u0435\u043D\u044C \u0431\u043E\u043B\u044C\u0448\u043E\u0439"
+    cost: 250
+    refundAmount: 200
+    bullet: {fileID: 7035541190334439306, guid: 6a2a61e92e2fd7b408046a2fcba47935, type: 3}
+    fireRate: 2
     visualization: {fileID: 675938209060951366}
-  - strength: 324
-    rateOfFire: erwr
-    attackRadius: wer
-    cost: 50
-    refundAmount: 50
+  - strength: 10
+    rateOfFire: "\u041C\u0435\u0434\u043B\u0435\u043D\u043D\u043E"
+    attackRadius: "\u041E\u0447\u0435\u043D\u044C \u0431\u043E\u043B\u044C\u0448\u043E\u0439"
+    cost: 350
+    refundAmount: 350
     bullet: {fileID: 4560136675530515232, guid: f40ea0710f1b993489767fb8be2fec8b, type: 3}
     fireRate: 1
     visualization: {fileID: 8067774052511186458}
@@ -167,8 +167,8 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 2.1
-  m_Height: 7
+  m_Radius: 4
+  m_Height: 10
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &3160233570753461745
@@ -185,6 +185,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemiesInRange: []
   towerData: {fileID: 2659592660082758073}
+  death: {fileID: 0}
 --- !u!1001 &7149204994104214347
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -278,8 +279,8 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 2.2
-  m_Height: 7
+  m_Radius: 5
+  m_Height: 12
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1728406654397366999
@@ -296,6 +297,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemiesInRange: []
   towerData: {fileID: 2659592660082758073}
+  death: {fileID: 0}
 --- !u!1001 &8261726301829817553
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -389,8 +391,8 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 2
-  m_Height: 7
+  m_Radius: 3
+  m_Height: 10
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &7185553729149077276
@@ -407,3 +409,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemiesInRange: []
   towerData: {fileID: 2659592660082758073}
+  death: {fileID: 0}

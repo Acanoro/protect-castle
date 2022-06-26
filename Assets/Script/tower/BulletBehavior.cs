@@ -12,6 +12,8 @@ public class BulletBehavior : MonoBehaviour
     public Vector3 startPosition;
     public Vector3 targetPosition;
 
+    
+
     // track the current position of the projectile
     private float distance;
     private float startTime;
@@ -45,6 +47,7 @@ public class BulletBehavior : MonoBehaviour
                 // destroy the object and reward the player
                 if (healthBar.currentHealth <= 0)
                 {
+                    
                     Destroy(target);
 
                     gameManager.Gold += healthBar.gold;

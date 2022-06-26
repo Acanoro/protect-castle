@@ -128,8 +128,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5cf74f5907a81a42889d7e8023c55c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
-  damage: 20
+  speed: 20
+  damage: 150
   target: {fileID: 0}
   startPosition: {x: 0, y: 0, z: 0}
   targetPosition: {x: 0, y: 0, z: 0}

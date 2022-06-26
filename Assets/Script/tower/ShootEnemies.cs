@@ -8,6 +8,8 @@ public class ShootEnemies : MonoBehaviour
     private float lastShotTime;
     public TowerData towerData;
 
+    public AudioSource death;
+
     void Start()
     {
         enemiesInRange = new List<GameObject>(); // At the very beginning, there are no enemies in range, so we create an empty list
@@ -18,10 +20,6 @@ public class ShootEnemies : MonoBehaviour
     void OnEnemyDestroy(GameObject enemy)
     {
         enemiesInRange.Remove(enemy);
-        //AUDIO!!!! AUDIO!!!! AUDIO!!!! AUDIO!!!!
-
-        /*AudioSource audioSource = enemy.GetComponent<AudioSource>();
-        audioSource.PlayOneShot(audioSource.clip);*/
     }
 
     void OnTriggerEnter(Collider other)
