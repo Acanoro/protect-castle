@@ -13,8 +13,7 @@ public class HealthBar : MonoBehaviour
 
     void Start()
     {
-        maxHealth = 100;
-        currentHealth = 100;
+        
         originalScale = gameObject.transform.localScale.y;
     }
 

@@ -18,6 +18,10 @@ public class ShootEnemies : MonoBehaviour
     void OnEnemyDestroy(GameObject enemy)
     {
         enemiesInRange.Remove(enemy);
+        //AUDIO!!!! AUDIO!!!! AUDIO!!!! AUDIO!!!!
+
+        /*AudioSource audioSource = enemy.GetComponent<AudioSource>();
+        audioSource.PlayOneShot(audioSource.clip);*/
     }
 
     void OnTriggerEnter(Collider other)

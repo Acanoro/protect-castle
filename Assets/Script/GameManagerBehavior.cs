@@ -9,8 +9,12 @@ public class GameManagerBehavior : MonoBehaviour
     public Text waveLabel; // stores a reference to the wave number output label
     public bool gameOver = false;
 
+    public Text healthLabel;
+
     private int gold;
+
     public int Gold
+
     {
         get
         {
@@ -42,5 +46,30 @@ public class GameManagerBehavior : MonoBehaviour
     {
         Gold = 500;
         wave = 0;
+        health = 20;
+    }
+    private int health;
+    public int Health
+    {
+        get
+        {
+            return health;
+        }
+        set
+        {
+            
+            health = value;
+            healthLabel.text = health.ToString();
+            // 3
+            if (health <= 0 && !gameOver)
+            {
+                gameOver = true;
+                /*GameObject gameOverText = GameObject.FindGameObjectWithTag("GameOver");
+                gameOverText.GetComponent<Animator>().SetBool("gameOver", true);*/
+            }
+            
+          
+            
+        }
     }
 }

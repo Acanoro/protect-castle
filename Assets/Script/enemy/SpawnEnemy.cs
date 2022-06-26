@@ -14,7 +14,7 @@ public class SpawnEnemy : MonoBehaviour
     int waveCount = 0;
     public GameObject Button;
     // Start is called before the first frame update
-    void StartSpawning()
+    public void StartSpawning()
     {
         InvokeRepeating("SpawnWave", startTime, enInterval);
     }
@@ -24,11 +24,11 @@ public class SpawnEnemy : MonoBehaviour
     {
         if (enCount[waveCount] == waveSize[waveCount])
         {
-            if (waveCount < 3)
+            Button.SetActive(true);
+            CancelInvoke("SpawnWave");
+            if (waveCount < waveSize.Length - 1)
             {
-                CancelInvoke("SpawnWave");
-                waveCount++;
-                Button.SetActive(true);
+                waveCount++;               
             }
         }
     }

@@ -28,7 +28,7 @@ public class MoveToCheckPoint : MonoBehaviour
             myAnimator.Play("Walking");
             myAgent.SetDestination(Waypoints[curWaypointIndex].position);
 
-            if (Vector3.Distance(transform.position, Waypoints[curWaypointIndex].position) < 2)
+            if (Vector3.Distance(transform.position, Waypoints[curWaypointIndex].position) < 1)
             {
                 curWaypointIndex++;
             }
@@ -37,6 +37,8 @@ public class MoveToCheckPoint : MonoBehaviour
         {
             myAnimator.enabled = false;
             Destroy(gameObject);
+            GameManagerBehavior gameManager = GameObject.Find("GameManager").GetComponent<GameManagerBehavior>();
+            gameManager.Health -= 1;
         }
         
 }

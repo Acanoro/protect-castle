@@ -13,5 +13,6 @@ public class EnemyDestructionDelegate : MonoBehaviour
         {
             enemyDelegate(gameObject);
         }
+
     }
 }
