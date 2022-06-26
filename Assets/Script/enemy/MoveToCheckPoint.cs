@@ -1,29 +1,45 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class MoveToCheckPoint : MonoBehaviour
 {
-
-    public float Speed;
-
+    private NavMeshAgent myAgent;
+    private Animator myAnimator;
     public Transform[] Waypoints;
-
     int curWaypointIndex = 0;
+    
+
+    private void Start()
+    {
+        myAgent = GetComponent<NavMeshAgent>();
+        myAgent.enabled = true;
+        myAnimator = GetComponent<Animator>();
+        
+    }
+
 
     // Update is called once per frame
     void Update()
     {
-
-        if (curWaypointIndex < Waypoints.Length)
+        if( curWaypointIndex <=Waypoints.Length - 1) 
         {
-            transform.position = Vector3.MoveTowards(transform.position, Waypoints[curWaypointIndex].position, Time.deltaTime * Speed);
-            if (Vector3.Distance(transform.position, Waypoints[curWaypointIndex].position) < 0.5f)
+            myAnimator.Play("Walking");
+            myAgent.SetDestination(Waypoints[curWaypointIndex].position);
+
+            if (Vector3.Distance(transform.position, Waypoints[curWaypointIndex].position) < 2)
             {
                 curWaypointIndex++;
             }
         }
-    }
+        else
+        {
+            myAnimator.enabled = false;
+            Destroy(gameObject);
+        }
+        
+}
 
     // The code calculates the length of the path not yet traveled by the enemy
     // I've replaced Waypoints[curWaypointIndex + 1] on Waypoints[curWaypointIndex]
