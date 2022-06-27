@@ -133,6 +133,7 @@ public class PlayerRay : MonoBehaviour
                         descriptionTowerBuild.SetActive(true);
                     }
                     hideTowerSelection();
+/*                    placeTower.FillingTowerBuild();*/
                 }
 
                 TowerUpgrade temporaryTowerUpgrade = hit.collider.gameObject.GetComponent<TowerUpgrade>();
@@ -148,6 +149,8 @@ public class PlayerRay : MonoBehaviour
                         descriptionTowerBuild.SetActive(true);
                     }
                     hideTowerSelection();
+
+/*                    placeTower.FillingTowerUpgrade();*/
                 }
 
                 TowerRemoval towerRemoval = hit.collider.gameObject.GetComponent<TowerRemoval>();

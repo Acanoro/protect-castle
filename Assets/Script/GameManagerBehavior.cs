@@ -29,10 +29,10 @@ public class GameManagerBehavior : MonoBehaviour
         }
     }
 
-    private int wave;
-    public int Wave
+    private int wave = 0;
+    public void Wave()
     {
-        get
+        /*get
         {
             return wave;
         }
@@ -40,14 +40,16 @@ public class GameManagerBehavior : MonoBehaviour
         {
             wave = value;
             waveLabel.text = (wave + 1).ToString();
-        }
+        }*/
+        wave++;
+        waveLabel.text = ("ÂÎËÍÀ:" + wave).ToString();
     }
 
     // Start is called before the first frame update
     void Start()
     {
         Gold = 600;
-        wave = 0;
+        
         health = 20;
     }
     private int health;

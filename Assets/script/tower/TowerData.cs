@@ -5,6 +5,7 @@ using UnityEngine;
 [System.Serializable]  // this allows us to quickly change all values ​​of the Level class, even when the game is running
 public class TowerLevel
 {
+    public Sprite img;
     public string strength;
     public string rateOfFire;
     public string attackRadius;
