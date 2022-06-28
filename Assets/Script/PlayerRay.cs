@@ -7,9 +7,9 @@ public class PlayerRay : MonoBehaviour
     private PlaceTower placeTower;
     private BuildingTower buildingTower;
     private TowerUpgrade towerUpgrade;
+    private TowerRemoval towerRemoval;
 
-    public GameObject descriptionTowerBuild;
-    public GameObject descriptionTowerUpgrade;
+    public GameObject gameMode;
 
     public GameObject towerName;
     public GameObject towerDescription;
@@ -55,6 +55,12 @@ public class PlayerRay : MonoBehaviour
         }
     }
 
+    public void ExitDelete()
+    {
+        towerRemoval = null;
+        showTowerSelection();
+    }
+
     public void Build()
     {
         hideTowerSelection();
@@ -76,6 +82,13 @@ public class PlayerRay : MonoBehaviour
 
         buildingTower = null;
         placeTower = null;
+    }
+
+    public void Delete()
+    {
+        hideTowerSelection();
+        towerRemoval.Click();
+        towerRemoval = null;
     }
 
     void Update()
@@ -100,13 +113,12 @@ public class PlayerRay : MonoBehaviour
                 }
                 else if (temporaryPlaceTower)
                 {
-                    if ((placeTower.Tower == null && descriptionTowerBuild.activeSelf == false) || (placeTower.Tower && descriptionTowerUpgrade.activeSelf == false))
+                    if ((placeTower.Tower == null && gameMode.transform.Find("TowerBuild").gameObject.activeSelf == false) || (placeTower.Tower && gameMode.transform.Find("TowerUpgrade").gameObject.activeSelf == false && gameMode.transform.Find("TowerDelete").gameObject.activeSelf == false))
                     {
                         hideTowerSelection();
                         placeTower = temporaryPlaceTower;
                         showTowerSelection();
                     }
-                    placeTower = temporaryPlaceTower;
                     if (placeTower.Tower)
                     {
                         placeTower.Filling();
@@ -126,14 +138,14 @@ public class PlayerRay : MonoBehaviour
                     buildingTower = temporarybuildingTower;
                     if (placeTower.Tower)
                     {
-                        descriptionTowerUpgrade.SetActive(true);
+                        gameMode.transform.Find("TowerUpgrade").gameObject.SetActive(true);
                     }
                     else
                     {
-                        descriptionTowerBuild.SetActive(true);
+                        gameMode.transform.Find("TowerBuild").gameObject.SetActive(true);
                     }
                     hideTowerSelection();
-/*                    placeTower.FillingTowerBuild();*/
+                    placeTower.FillingTowerBuild(buildingTower);
                 }
 
                 TowerUpgrade temporaryTowerUpgrade = hit.collider.gameObject.GetComponent<TowerUpgrade>();
@@ -142,21 +154,27 @@ public class PlayerRay : MonoBehaviour
                     towerUpgrade = temporaryTowerUpgrade;
                     if (placeTower.Tower)
                     {
-                        descriptionTowerUpgrade.SetActive(true);
+                        gameMode.transform.Find("TowerUpgrade").gameObject.SetActive(true);
                     }
                     else
                     {
-                        descriptionTowerBuild.SetActive(true);
+                        gameMode.transform.Find("TowerBuild").gameObject.SetActive(true);
                     }
                     hideTowerSelection();
 
-/*                    placeTower.FillingTowerUpgrade();*/
+                    placeTower.FillingTowerUpgrade();
                 }
 
-                TowerRemoval towerRemoval = hit.collider.gameObject.GetComponent<TowerRemoval>();
-                if (towerRemoval)
+                TowerRemoval temporarytowerRemoval = hit.collider.gameObject.GetComponent<TowerRemoval>();
+                if (temporarytowerRemoval)
                 {
-                    towerRemoval.Click();
+                    towerRemoval = temporarytowerRemoval;
+                    if (placeTower.Tower)
+                    {
+                        gameMode.transform.Find("TowerDelete").gameObject.SetActive(true);
+                    }
+                    placeTower.FillingTowerDelete();
+                    hideTowerSelection();
                 }
             }
         }
@@ -164,7 +182,7 @@ public class PlayerRay : MonoBehaviour
         {
             if (Input.GetMouseButtonDown(0) && placeTower)
             {
-                if ((placeTower.Tower == null && descriptionTowerBuild.activeSelf == false) || (placeTower.Tower && descriptionTowerUpgrade.activeSelf == false))
+                if ((placeTower.Tower == null && gameMode.transform.Find("TowerBuild").gameObject.activeSelf == false) || (placeTower.Tower && gameMode.transform.Find("TowerUpgrade").gameObject.activeSelf == false && gameMode.transform.Find("TowerDelete").gameObject.activeSelf == false))
                 {
                     if (placeTower)
                     {
