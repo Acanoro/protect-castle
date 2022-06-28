@@ -367,6 +367,7 @@
 "Assets/Script/tower/TowerRemoval.cs"
 "Assets/Script/tower/TowerUpgrade.cs"
 "Assets/Script/Transitions.cs"
+"Assets/Script/ZoomPan.cs"
 "Assets/TextMesh Pro/Examples & Extras/Scripts/Benchmark01.cs"
 "Assets/TextMesh Pro/Examples & Extras/Scripts/Benchmark01_UGUI.cs"
 "Assets/TextMesh Pro/Examples & Extras/Scripts/Benchmark02.cs"

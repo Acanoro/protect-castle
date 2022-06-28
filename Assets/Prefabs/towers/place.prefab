@@ -286,13 +286,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36024f974145d174bbd2dbaa9943efe7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nameLabel: {fileID: 0}
-  strengthLabel: {fileID: 0}
-  rateOfFireLabel: {fileID: 0}
-  attackRadiusLabel: {fileID: 0}
-  iconTower: {fileID: 0}
+  towerName: {fileID: 0}
+  towerDescription: {fileID: 0}
   towerBuild: {fileID: 0}
   towerUpgrade: {fileID: 0}
+  towerDelete: {fileID: 0}
 --- !u!1 &6417638769316669648
 GameObject:
   m_ObjectHideFlags: 0
@@ -789,6 +787,10 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 14d0b575b4623b340a5ab37b4c13995a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -50
+      objectReference: {fileID: 0}
+    - target: {fileID: -7635826562936255635, guid: 14d0b575b4623b340a5ab37b4c13995a, type: 3}
+      propertyPath: m_CastShadows
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 14d0b575b4623b340a5ab37b4c13995a, type: 3}
       propertyPath: m_Name

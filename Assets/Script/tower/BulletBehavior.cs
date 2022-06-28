@@ -23,7 +23,7 @@ public class BulletBehavior : MonoBehaviour
     void Start()
     {
         startTime = Time.time; // set the value of the current time
-        distance = Vector2.Distance(startPosition, targetPosition); // calculate the distance between the start and target positions
+        distance = Vector3.Distance(startPosition, targetPosition); // calculate the distance between the start and target positions
         GameObject gm = GameObject.Find("GameManager");
         gameManager = gm.GetComponent<GameManagerBehavior>();
     }
