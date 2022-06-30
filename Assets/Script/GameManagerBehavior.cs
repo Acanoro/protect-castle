@@ -42,7 +42,7 @@ public class GameManagerBehavior : MonoBehaviour
             waveLabel.text = (wave + 1).ToString();
         }*/
         wave++;
-        waveLabel.text = ("ÂÎËÍÀ:" + wave).ToString();
+        waveLabel.text = ("ÂÎËÍÀ: " + wave).ToString();
     }
 
     // Start is called before the first frame update
