@@ -678,9 +678,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbb78606e5e0e754184d44afe9f19abd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
-  currentHealth: 100
-  gold: 15
+  maxHealth: 2000
+  currentHealth: 2000
+  gold: 500
 --- !u!1 &4624018939196431022
 GameObject:
   m_ObjectHideFlags: 0
@@ -1240,7 +1240,7 @@ GameObject:
   - component: {fileID: 2972579359315615315}
   m_Layer: 0
   m_Name: lich@Strut Walking
-  m_TagString: Untagged
+  m_TagString: Tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1294,7 +1294,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.02
-  m_Speed: 3.5
+  m_Speed: 1.5
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
